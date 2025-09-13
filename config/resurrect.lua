@@ -75,6 +75,8 @@ resurrect.state_manager.set_encryption({
 	public_key = "age1ddyj7qftw3z5ty84gyns25m0yc92e2amm3xur3udwh2262pa5afqe3elg7",
 })
 
+resurrect.state_manager.change_state_save_dir("/home/hovakim/GitSync/gits2501/States/")
+
 wezterm.on("resurrect.error", function(err)
 	wezterm.log_error("ERROR!")
 	wezterm.gui.gui_windows()[1]:toast_notification("resurrect", err, nil, 3000)
