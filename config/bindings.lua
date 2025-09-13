@@ -240,8 +240,7 @@ local keys = {
             is_fuzzy = true,
          })
       end),
-  },
-
+   },
    -- For resurrect
 	{
 		key = "r",
@@ -271,7 +270,7 @@ local keys = {
 	},
 	{
 		key = "b",
-		mods = mod.SUPER_REV,
+		mods = "LEADER",
 		action = wezterm.action_callback(function(win, pane)
 			resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
 				local type = string.match(id, "^([^/]+)") -- match before '/'
@@ -345,7 +344,7 @@ local keys = {
             resurrect.window_state.restore_window(pane:window(), state, opts)
          elseif type == "tab" then
             local state = resurrect.state_manager.load_state(id, "tab")
-            resurrect.tab_state.restore_tab(pane:tab(), state, opts
+            resurrect.tab_state.restore_tab(pane:tab(), state, opts)
          end
          end)
       end),
