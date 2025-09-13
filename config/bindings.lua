@@ -223,10 +223,12 @@ local keys = {
          timemout_milliseconds = 1000,
       }),
    },
+
+
    -- For resurrect delete state
    {
       key = "d",
-      mods = "ALT",
+      mods = mod.SUPER_REV,
       action = wezterm.action_callback(function(win, pane)
          resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id)
             resurrect.state_manager.delete_state(id)
@@ -243,7 +245,7 @@ local keys = {
    -- For resurrect
 	{
 		key = "r",
-		mods = "LEADER",
+		mods = mod.SUPER_REV,
 		action = wezterm.action_callback(function(win, pane)
 			resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
 				local type = string.match(id, "^([^/]+)") -- match before '/'
@@ -269,7 +271,7 @@ local keys = {
 	},
 	{
 		key = "b",
-		mods = "LEADER",
+		mods = mod.SUPER_REV,
 		action = wezterm.action_callback(function(win, pane)
 			resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
 				local type = string.match(id, "^([^/]+)") -- match before '/'
@@ -298,24 +300,24 @@ local keys = {
 	},
    {
       key = "w",
-      mods = "ALT",
+      mods = mod.SUPER_REV,
       action = wezterm.action_callback(function(win, pane)
          resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
          end),
    },
    {
       key = "W",
-      mods = "ALT",
+      mods = mod.SUPER_REV,
       action = resurrect.window_state.save_window_action(),
    },
    {
       key = "T",
-      mods = "ALT",
+      mods = mod.SUPER_REV,
       action = resurrect.tab_state.save_tab_action(),
    },
    {
       key = "s",
-      mods = "ALT",
+      mods = mod.SUPER_REV,
       action = wezterm.action_callback(function(win, pane)
          resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
          resurrect.window_state.save_window_action()
@@ -324,7 +326,7 @@ local keys = {
    -- * Load state
    {
       key = "r",
-      mods = "ALT",
+      mods = mod.SUPER_REV,
       action = wezterm.action_callback(function(win, pane)
          resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
          local type = string.match(id, "^([^/]+)") -- match before '/'
