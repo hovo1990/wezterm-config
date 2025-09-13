@@ -345,7 +345,7 @@ local keys = {
             resurrect.window_state.restore_window(pane:window(), state, opts)
          elseif type == "tab" then
             local state = resurrect.state_manager.load_state(id, "tab")
-            resurrect.tab_state.restore_tab(pane:tab(), state, opts)
+            resurrect.tab_state.restore_tab(pane:tab(), state, opts
          end
          end)
       end),
