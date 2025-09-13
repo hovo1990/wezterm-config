@@ -279,6 +279,7 @@ local keys = {
 				if type == "workspace" then
 					local state = resurrect.state_manager.load_state(id, "workspace")
 					resurrect.workspace_state.restore_workspace(state, opts)
+               wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), state.workspace) -- <-- rename workspace to the one restored
 				elseif type == "window" then
 					local state = resurrect.state_manager.load_state(id, "window")
 					resurrect.window_state.restore_window(pane:window(), state, opts)
@@ -308,6 +309,7 @@ local keys = {
 				if type == "workspace" then
 					local state = resurrect.state_manager.load_state(id, "workspace")
 					resurrect.workspace_state.restore_workspace(state, opts)
+               wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), state.workspace)
 				elseif type == "window" then
 					local state = resurrect.state_manager.load_state(id, "window")
 					resurrect.window_state.restore_window(pane:window(), state, opts)
