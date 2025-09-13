@@ -47,15 +47,15 @@ end
 
 config_stuff.ssh_domains = {
 	{
-		name = "rpi5",
-		remote_address = "192.168.0.42",
-		username = "mlflexer",
+		name = "admin-slurm-head",
+		remote_address = "admin-slurm-head",
+		username = "ws-admin",
 	},
 }
 
 config_stuff.exec_domains = {
-	wezterm.exec_domain("rpi5_exec", function(cmd)
-		cmd.args = { "ssh", "mlflexer@192.168.0.42" }
+	wezterm.exec_domain("admin-slurm-head_exec", function(cmd)
+		cmd.args = { "ssh", "admin-slurm-head" }
 		return cmd
 	end),
 }
