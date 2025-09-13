@@ -1,0 +1,98 @@
+{
+    "ansible.python.interpreterPath": "/opt/homebrew/anaconda3/envs/ansible/bin/python",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "169.228.63.64",
+            "port": 25001,
+            "driver": "MariaDB",
+            "name": "dbase_test",
+            "database": "web_users",
+            "username": "anel",
+            "password": "$coMp\"|lex99password"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "169.228.63.64",
+            "port": 25001,
+            "driver": "MariaDB",
+            "database": "web_users",
+            "name": "dbase_test2",
+            "username": "ablab-admin",
+            "password": "ProjectDBASEuser2501@%)!"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "169.228.63.64",
+            "port": 25001,
+            "driver": "MySQL",
+            "name": "dbase_mysql",
+            "database": "molcartdb",
+            "username": "ablab-admin",
+            "password": "ProjectDBASEuser2501@%)!"
+        }
+    ],
+    "better-comments.tags": [
+
+        {
+            "tag": "-- !",
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "-- ?",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "-- //",
+            "color": "#474747",
+            "strikethrough": true,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "-- todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "-- *",
+            "color": "#98C379",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": false
+        }
+        ],
+    "workbench.colorTheme": "Nord",
+    "workbench.preferredDarkColorTheme": "Nord",
+    "workbench.preferredHighContrastColorTheme": "Nord",
+    "workbench.preferredHighContrastLightColorTheme": "Nord",
+    "workbench.preferredLightColorTheme": "Nord",
+    "asciidoc.antora.enableAntoraSupport": true
+}
