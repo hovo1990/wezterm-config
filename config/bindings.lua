@@ -18,6 +18,27 @@ elseif platform.is_win or platform.is_linux then
    mod.SUPER_REV = 'ALT|CTRL'
 end
 
+
+local function custom_on_pane_restore(pane_state, opts)
+   wezterm.log_info("Log> trying to determine auto run or not")
+   wezterm.log_info("Log> pane_state: " .. wezterm.format(pane_state))
+   wezterm.log_info("Log> command: " .. (pane_state.command or "nil"))
+   wezterm.log_info("Log> domain_name: " .. (pane_state.domain_name or "nil"))
+
+   if pane_state.domain_name == "admin-slurm-head" or pane_state.command == "ssh admin-slurm-head" then
+      wezterm.log_info("Log> launching SSH tab automatically")
+      wezterm.spawn_or_activate_tab {
+         domain_name = "admin-slurm-head",
+         args = { "ssh", "admin-slurm-head" },
+      }
+   else
+      wezterm.log_info("Log> running default restore")
+      resurrect.tab_state.default_on_pane_restore(pane_state, opts)
+   end
+end
+
+
+
 -- stylua: ignore
 local keys = {
    -- misc/useful --
@@ -270,7 +291,7 @@ local keys = {
 	},
 	{
 		key = "b",
-		mods = "LEADER",
+		mods = mod.SUPER_REV,
 		action = wezterm.action_callback(function(win, pane)
 			resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
 				local type = string.match(id, "^([^/]+)") -- match before '/'
