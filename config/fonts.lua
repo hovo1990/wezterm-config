@@ -6,7 +6,8 @@ local font_family = 'JetBrainsMono Nerd Font'
 -- local font_family = 'CartographCF Nerd Font'
 
 -- local font_size = platform.is_mac and 12 or 9.75
-local font_size = 17
+
+local font_size = platform.is_linux and 16 or 9.75
 
 return {
    font = wezterm.font({
